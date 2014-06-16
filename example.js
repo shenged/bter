@@ -10,7 +10,13 @@
 		if(err) throw err;
 		console.log(result);
 	});
-	
+
+	// Gets all tickers available
+	bter.getAllTickers(function(err, result) {
+		if(err) throw err;
+		console.log(result);
+	});	
+
 	// Gets all ticker information for the given pair
 	bter.getTicker({ CURR_A: 'doge', CURR_B: 'btc' }, function(err, result) {
 		if(err) throw err;
@@ -60,4 +66,9 @@
 		console.log(result);
 	});
 
+	// Gets trade history in last 24 hours
+	bter.getTradeHistory({ API_KEY: API_KEY, SECRET_KEY: SECRET_KEY, CURR_A: 'doge', CURR_B: 'btc' }, function(err, result) {
+		if(err) throw err;
+		console.log(result);
+	});
 })();
